@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPC Baramulla | Official Website | Session 2026</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Ad Script (Exclusively for PYQ and Syllabus pages) -->
+    <script type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <style>
+        :root {
+            --maroon: #800000;
+            --maroon-dark: #4d0000;
+            --yellow: #FFD700;
+            --white: #FFFFFF;
+            --soft-black: #282A29;
+            --overlay: rgba(128, 0, 0, 0.9);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* GLOBALS & FIXED BACKGROUND */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { 
+            color: var(--soft-black); 
+            background-color: var(--white); 
+            overflow-x: hidden;
+            background-image: linear-gradient(var(--overlay), var(--overlay)), url('https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/Screenshot_20260328-194517.Maps.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* UTILITIES */
+        section { padding: 80px 8%; background: var(--white); border-radius: 10px; margin-bottom: 30px; }
+        .section-title { font-size: 2.5rem; color: var(--maroon); text-align: center; margin-bottom: 40px; font-weight: 700; text-transform: uppercase; }
+        .section-title::after { content: ''; display: block; width: 70px; height: 5px; background: var(--yellow); margin: 15px auto; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* NAVIGATION & LOGO */
+        header { background: var(--maroon); position: sticky; top: 0; z-index: 1000; border-bottom: 4px solid var(--yellow); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 8%; max-width: 1400px; margin: auto; }
+        .logo-area { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-container { width: 65px; height: 65px; border-radius: 50%; border: 2px solid var(--yellow); overflow: hidden; background: white; animation: logo-glow 2s infinite alternate; }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
+        @keyframes logo-glow { from { box-shadow: 0 0 5px var(--yellow); } to { box-shadow: 0 0 20px var(--yellow); } }
+
+        .nav-links { display: flex; list-style: none; gap: 15px; }
+        .nav-links a { text-decoration: none; color: white; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--yellow); }
+
+        /* TOP INFO BAR */
+        .top-bar { background: var(--maroon-dark); color: var(--yellow); padding: 10px 8%; display: flex; justify-content: space-between; font-size: 0.85rem; }
+
+        /* MARQUEE BANNER */
+        .marquee-banner { background: #000; padding: 12px 0; overflow: hidden; white-space: nowrap; border-bottom: 2px solid var(--yellow); }
+        .marquee-text { display: inline-block; animation: marquee 30s linear infinite; font-weight: 700; font-size: 1rem; color: var(--yellow); }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* HERO SECTION */
+        .hero { display: flex; min-height: 75vh; align-items: center; color: white; padding: 0 8%; gap: 40px; }
+        .hero-left { flex: 1.2; }
+        .hero-left h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        .hero-left h1 span { color: var(--yellow); }
+        .btn-cta { padding: 16px 40px; background: var(--yellow); color: var(--maroon); text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .hero-right { flex: 0.8; height: 450px; border-radius: 20px; border: 6px solid var(--gold); overflow: hidden; }
+        .hero-right img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* NOTICE BOARD */
+        .notice-card { background: white; padding: 30px; border-radius: 15px; border-left: 10px solid var(--maroon); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .notice-list { height: 180px; overflow-y: scroll; }
+        .notice-item { display: flex; gap: 15px; padding: 12px 0; border-bottom: 1px solid #eee; text-decoration: none; color: inherit; align-items: center; }
+        .notice-badge { background: #e74c3c; color: white; font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; }
+
+        /* CARD GRID */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .glass-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 40px; border-radius: 20px; color: white; text-align: center; cursor: pointer; transition: 0.4s; }
+        .glass-card:hover { transform: translateY(-10px); border-color: var(--yellow); background: rgba(255, 255, 255, 0.2); }
+        .glass-card i { font-size: 3rem; color: var(--yellow); margin-bottom: 20px; }
+
+        /* VIDEO GRID */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .video-card { border-radius: 15px; overflow: hidden; border: 4px solid var(--gold); height: 450px; background: #000; }
+        .video-card video { width: 100%; height: 100%; object-fit: cover; }
+
+        /* SPA PAGE VIEWS */
+        .page-view { display: none; padding: 120px 8% 60px; min-height: 100vh; background: #fff; }
+        .page-view.active { display: block; }
+        .page-header { color: var(--maroon); font-size: 2.5rem; border-bottom: 5px solid var(--yellow); display: inline-block; margin-bottom: 30px; }
+        .list-row { background: #f9f9f9; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; margin-bottom: 15px; }
+        .dl-btn { background: var(--maroon); color: var(--yellow); padding: 10px 25px; border-radius: 6px; text-decoration: none; font-weight: 700; }
+
+        /* GALLERY SLIDER */
+        .slider-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 5px solid var(--maroon); height: 500px; }
+        .slider { display: flex; transition: transform 0.6s ease-in-out; height: 100%; }
+        .slider img { width: 100%; flex-shrink: 0; object-fit: cover; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--maroon); color: var(--yellow); border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; }
+
+        /* FOOTER */
+        footer { background: var(--maroon-dark); color: white; padding: 60px 8% 40px; border-top: 5px solid var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--gold); margin-bottom: 20px; text-transform: uppercase; }
+        .bottom-bar { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; }
+        .credit-link { color: var(--gold); font-weight: 800; text-decoration: none; font-size: 1.1rem; }
+
+        /* MODAL */
+        #courseModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:2000; padding:60px 8%; overflow-y:auto; }
+        .modal-content { background:#fff; border-radius:20px; padding:40px; max-width:850px; margin:auto; position:relative; }
+        .close-x { position:absolute; right:20px; top:10px; font-size:2.5rem; cursor:pointer; color:var(--maroon); }
+
+        .hamburger { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; }
+
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+            .hero-right { width: 100%; height: 300px; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--maroon); padding: 20px; border-bottom: 4px solid var(--gold); }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div><i class="fas fa-phone-alt"></i> <a href="tel:01952234479" style="color:inherit; text-decoration:none;">01952-234479</a></div>
+        <div><i class="fas fa-map-marker-alt"></i> Kanispora, Baramulla, J&K - 193103</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <a href="javascript:void(0)" onclick="openPage('home-view')" class="logo-area">
+                <div class="logo-container">
+                    <img src="https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622298715.jpg?updatedAt=1774622611338" alt="GPC Logo">
+                </div>
+                <h2 style="color: white; font-size: 1.1rem; margin-left: 10px;">GPC BARAMULLA</h2>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="javascript:void(0)" onclick="openPage('home-view')">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('courses')">Course</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('notice')">Notices</a></li>
+                <li><a href="javascript:void(0)" onclick="openPage('syllabus-view')">Syllabus</a></li>
+                <li><a href="javascript:void(0)" onclick="openPage('pyq-view')">PYQ</a></li>
+                <li><a href="javascript:void(0)" onclick="openPage('gallery-view')">Gallery</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="marquee-banner" id="mainMarquee">
+        <div class="marquee-text">
+            Admission to Industrial Oriented Job Courses in collaboration with TATA Technologies at "CENTER FOR INVENTION, INNOVATION, INCUBATION & TRAINING (CIIIT), Government Polytechnic College Baramulla"
+        </div>
+    </div>
+
+    <!-- HOME VIEW -->
+    <div id="home-view">
+        <section class="hero" id="home" style="background: transparent;">
+            <div class="hero-left">
+                <h1>Govt. Polytechnic <span>Baramulla</span></h1>
+                <p>Empowering the youth of Jammu & Kashmir with market-driven diploma programs and Industry 4.0 expertise since 2012.</p>
+                <a href="#admissions" class="btn-cta">Admissions Open 2026</a>
+            </div>
+            <div class="hero-right">
+                <img src="https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622338967.jpg" alt="College">
+            </div>
+        </section>
+
+        <!-- NOTICE BOARD -->
+        <div class="notice-section reveal" id="notice" style="padding: 40px 8%; margin-top: -60px; z-index: 10; position: relative;">
+            <div class="notice-board">
+                <h3 style="color:var(--maroon); margin-bottom:15px;"><i class="fas fa-bullhorn"></i> Student Notice Board</h3>
+                <div class="notice-list">
+                    <a href="https://www.mediafire.com/file/ezawa06fkf2vvrp/AC.pdf/file" target="_blank" class="notice-item">
+                        <span class="notice-badge">New</span>
+                        <strong style="min-width: 100px;">Academic Calendar 2026</strong>
+                        <p>Click here to view/download the Academic Examination Calendar for session 2026.</p>
+                    </a>
+                    <div class="notice-item"><strong style="min-width: 100px;">Admissions 2026</strong><p>Direct admission based on 10th marks available for eligible candidates. Visit campus physically.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <section id="about" class="reveal">
+            <h2 class="section-title">About the Institution</h2>
+            <div style="text-align: center; max-width: 1000px; margin: auto;">
+                <p>Government Polytechnic College Baramulla was established in 2012. We are affiliated with JKSBOTE and approved by AICTE. Our mission is to provide industry-based technical education. Our collaboration with <strong>TATA Technologies (CIIIT)</strong> and <strong>NIT Srinagar</strong> ensures students are ready for the modern workforce.</p>
+            </div>
+        </section>
+
+        <!-- COURSES -->
+        <section id="courses" class="reveal" style="background: transparent;">
+            <h2 class="section-title" style="color:white;">Diploma Programs</h2>
+            <div class="card-grid">
+                <div class="glass-card" onclick="openCourse('electrical')">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electrical Engineering</h3>
+                    <p>3 Years | 60 Seats</p>
+                </div>
+                <div class="glass-card" onclick="openCourse('architecture')">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Architecture Assistantship</h3>
+                    <p>3 Years | 60 Seats</p>
+                </div>
+                <div class="glass-card" onclick="openCourse('automobile')">
+                    <i class="fas fa-car"></i>
+                    <h3>Automobile Engineering</h3>
+                    <p>3 Years | 30 Seats</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEOS ROWS -->
+        <section class="reveal">
+            <h2 class="section-title">Campus Tour</h2>
+            <div class="video-grid">
+                <div class="video-card"><video src="https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/AQM9EhOj6SYQDvXnsp56bUXarHGj6kTyYLpVviQO_XGA4BOxL8TSCeDjpBh9smbu4U1i2uXS0aPFlgkydKSK4ukT.mp4" muted autoplay loop playsinline></video></div>
+                <div class="video-card"><video src="https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/AQMocuCr4nYxODhRoJtmMwtTxY3-Pl7iTEMtFR4diQ34KJlarzmiWAi400_DwTkztmrA8fZt0xtnmnVuQCaAzoE.mp4" muted autoplay loop playsinline></video></div>
+                <div class="video-card"><video src="https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/AQMUVWJb0BCx8laS371hn5cwauMS1XJ7y3KTKBx5pUKJEiB3YJ5_ee_lM-PZaCSg10gbj8BcjepiWKN4fyO3d81z0Zp6XKL39JzxnuQ.mp4" muted autoplay loop playsinline></video></div>
+            </div>
+        </section>
+
+        <!-- FACILITIES -->
+        <section id="facilities" class="reveal">
+            <h2 class="section-title">Facilities</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+                <div style="padding:15px; border:1px solid #ddd; border-radius:8px;"><h4>Academic Block</h4><p>Smart classrooms and seminar halls.</p></div>
+                <div style="padding:15px; border:1px solid #ddd; border-radius:8px;"><h4>Labs & Workshops</h4><p>Modern electrical and IT labs.</p></div>
+                <div style="padding:15px; border:1px solid #ddd; border-radius:8px;"><h4>Library</h4><p>Books, journals, and digital access.</p></div>
+            </div>
+        </section>
+
+        <!-- MAP -->
+        <section id="contact" class="reveal">
+            <h2 class="section-title">Get In Touch</h2>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <div style="color:var(--maroon); font-weight: 500;">
+                    <p><i class="fas fa-map-marker-alt"></i> Kanispora, Baramulla, NH-1A, Gantamulla Road, J&K - 193103</p>
+                    <p style="margin-top:20px;"><i class="fas fa-phone-alt"></i> <a href="tel:01952234479">01952-234479</a></p>
+                    <p style="margin-top:20px;"><i class="fas fa-envelope"></i> <a href="mailto:gpolycollegebla@gmail.com">gpolycollegebla@gmail.com</a></p>
+                </div>
+                <div style="border: 5px solid var(--maroon); border-radius: 15px; overflow: hidden;">
+                    <iframe src="https://www.google.com/maps?q=69GX+GWF,+Kanispora,+Jammu+and+Kashmir+193101&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SYLLABUS VIEW -->
+    <div id="syllabus-view" class="page-view">
+        <script type="text/javascript">aclib.runAutoTag({zoneId: 'xlcyq6khdi',});</script>
+        <h2 class="page-header">NEP Syllabus</h2>
+        <div class="list-container">
+            <div class="list-row"><span>1st Sem Syllabus</span> <a href="https://www.mediafire.com/file/y6c641siyywk5dr/1stSemester.pdf/file" target="_blank" class="dl-btn">Download</a></div>
+            <div class="list-row"><span>2nd Sem Syllabus</span> <a href="https://www.mediafire.com/file/wemhftmryyf0fqh/2ndSemester.pdf/file" target="_blank" class="dl-btn">Download</a></div>
+            <div class="list-row"><span>3rd Sem Syllabus</span> <a href="https://www.mediafire.com/file/kgsaqqefkoapq3s/3rdSemester+(1).pdf/file" target="_blank" class="dl-btn">Download</a></div>
+            <div class="list-row"><span>4th Sem Syllabus</span> <a href="https://www.mediafire.com/file/57lsl61jb7enxmw/4thSemester+(1).pdf/file" target="_blank" class="dl-btn">Download</a></div>
+            <div class="list-row"><span>5th Sem Syllabus</span> <a href="https://www.mediafire.com/file/gjg93hoy8ba4uyu/5thSemester+(1).pdf/file" target="_blank" class="dl-btn">Download</a></div>
+            <div class="list-row"><span>6th Sem Syllabus</span> <a href="https://www.mediafire.com/file/v00s30darv9lfa5/6thSemester+(1).pdf/file" target="_blank" class="dl-btn">Download</a></div>
+        </div>
+    </div>
+
+    <!-- PYQ VIEW -->
+    <div id="pyq-view" class="page-view">
+        <script type="text/javascript">aclib.runAutoTag({zoneId: 'xlcyq6khdi',});</script>
+        <h2 class="page-header">Previous Year Questions</h2>
+        <div class="list-container">
+            <div class="list-row"><span>1st Sem Comp 2023</span> <a href="https://www.mediafire.com/file/85979d5u9bkdes2/1st+sem+comp+2023.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+            <div class="list-row"><span>2nd Sem Computer 2023</span> <a href="https://www.mediafire.com/file/i4wl9bd9liablog/2nd+sem+computer+2023.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+            <div class="list-row"><span>3rd Sem E&C 2023</span> <a href="https://www.mediafire.com/file/w6sq7woudi04na0/E&C++3th+sem+2023.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+            <div class="list-row"><span>4th Sem E&C 2022</span> <a href="https://www.mediafire.com/file/m4mf4a8algrsyr9/4th+sem+E&C+2022.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+            <div class="list-row"><span>4th Sem E&C 2023</span> <a href="https://www.mediafire.com/file/3dl5mk6fnvsw3em/4th+semester+E&C+2023.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+            <div class="list-row"><span>5th Sem E&C 2022</span> <a href="https://www.mediafire.com/file/u5phoi3a5sut0pa/5th+semester+E&C+2022.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+            <div class="list-row"><span>6th Sem E&C 2023</span> <a href="https://www.mediafire.com/file/gruamv16zua2xy9/6th+semester+E&C+2023.pdf/file" target="_blank" class="dl-btn">PDF</a></div>
+        </div>
+    </div>
+
+    <!-- GALLERY VIEW -->
+    <div id="gallery-view" class="page-view">
+        <h2 class="page-header">Campus Gallery</h2>
+        <div class="slider-wrapper">
+            <div class="slider" id="mainSlider"></div>
+            <button class="slider-btn" style="left:10px;" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn" style="right:10px;" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>GPC Baramulla</h4>
+                <a href="https://www.facebook.com/share/1LdKZEYLMY/" target="_blank" class="dl-btn" style="margin-top:20px; display:inline-block;"><i class="fab fa-facebook-f"></i> Facebook</a>
+            </div>
+            <div class="footer-col">
+                <h4>Portals</h4>
+                <a href="https://share.google/G1YVAgBbGCkRAyfF9" target="_blank" style="color:white; display:block; margin-bottom:5px;">JKBOTE Online</a>
+                <a href="https://share.google/BfbIt5Nj41ZCJSsWb" target="_blank" style="color:white; display:block;">AICTE Official</a>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <a href="https://omnitools.42web.io/" target="_blank" class="credit-link">Credit: Omnitools</a>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="courseModal">
+        <div class="modal-content">
+            <span class="close-x" onclick="closeCourse()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+
+        function openPage(id) {
+            document.getElementById('home-view').style.display = 'none';
+            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+            document.getElementById('mainMarquee').style.display = 'none';
+            if(id === 'home-view') {
+                document.getElementById('home-view').style.display = 'block';
+                document.getElementById('mainMarquee').style.display = 'flex';
+            } else {
+                document.getElementById(id).classList.add('active');
+            }
+            window.scrollTo(0,0);
+            if(window.innerWidth <= 992) toggleMenu();
+        }
+
+        function scrollToSection(id) {
+            openPage('home-view');
+            setTimeout(() => { document.getElementById(id).scrollIntoView({behavior:'smooth'}); }, 100);
+        }
+
+        const images = ["https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622392526.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622355474.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622388663.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622344088.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622348307.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622363694.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622338967.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622367062.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622371431.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622384420.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622399156.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622376137.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622352000.jpg", "https://ik.imagekit.io/OmniAPKlibrary/GPC%20BARAMULLA%20/FB_IMG_1774622380836.jpg"];
+        const slider = document.getElementById('mainSlider');
+        images.forEach(s => { const img = document.createElement('img'); img.src = s; slider.appendChild(img); });
+        let slideIdx = 0;
+        function moveSlide(n) { slideIdx = (slideIdx + n + images.length) % images.length; slider.style.transform = `translateX(-${slideIdx * 100}%)`; }
+        setInterval(() => moveSlide(1), 4000);
+
+        function openCourse(id) {
+            const data = {
+                electrical: { title: "Electrical Engineering", body: "<p>3 Years | 60 Seats. Focus on power systems, machines, and Industry 4.0 expertise with CIIIT TATA collaboration.</p>" },
+                architecture: { title: "Architecture Assistantship", body: "<p>3 Years | 60 Seats. Training in building design, 3D drafting, and construction planning.</p>" },
+                automobile: { title: "Automobile Engineering", body: "<p>3 Years | 30 Seats. Study of engine diagnostics, chassis design, and modern mechanical systems.</p>" }
+            };
+            document.getElementById('modalTitle').innerText = data[id].title;
+            document.getElementById('modalBody').innerHTML = data[id].body;
+            document.getElementById('courseModal').style.display = 'block';
+        }
+        function closeCourse() { document.getElementById('courseModal').style.display = 'none'; }
+        window.addEventListener("scroll", () => { document.querySelectorAll(".reveal").forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); });
+    </script>
+</body>
+</html>
